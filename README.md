@@ -38,6 +38,9 @@ in this [go.mod](./go.mod) we will listing all our packages & dependencies for t
 ### Run Main code
 ```bash
 go run .
+
+# also if you want to run a code with a different name:
+go run file.go
 ```
 
 ### Install packages
@@ -55,6 +58,9 @@ go get github.com/google/uuid
 of course the .exe executes the Main code as principal
 ```bash
 go build .
+
+# also if you want to build a code with a different name:
+go build file.go
 ```
 
 so you can execute now the .exe, it will run the same, but now compiled.
