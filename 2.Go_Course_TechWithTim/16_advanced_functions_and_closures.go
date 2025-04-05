@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// say_hi receives a name and prints a greeting
 func say_hi(name string) {
 	fmt.Println("Hello " + name)
 }
