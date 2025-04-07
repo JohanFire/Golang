@@ -2,8 +2,8 @@ syntax = "proto3";
 package chat;
 
 // option go_package = "github.com/user/project/proto/classificationpb";
-// option go_package = "5.compose_local_grpc_server/proto/classificationpb";
-// option go_package = "5.compose_local_grpc_server/proto";
+// option go_package = "2.gRPC_structured/proto/classificationpb";
+// option go_package = "2.gRPC_structured/proto";
 // option go_package = "proto";
 
 // option go_package = "proto/classificationpb"; // if multiple proto files

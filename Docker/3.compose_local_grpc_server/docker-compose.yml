@@ -1,0 +1,6 @@
+services:
+  golang:
+    build: .
+    container_name: golang-script
+    command: ["./main"]
+    restart: on-failure:3

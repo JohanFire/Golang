@@ -1,4 +1,4 @@
-module 5.compose_local_grpc_server
+module 1.gRPC
 
 go 1.24.2
 
