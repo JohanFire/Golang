@@ -1,0 +1,13 @@
+services:
+  grpc:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    build: .
+    container_name: gRPC-server
+    ports:
+      - 8080:8080
+    # volumes:
+    #   - .:/app
+    command: ["./main"]
+    restart: on-failure:3
