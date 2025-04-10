@@ -42,6 +42,21 @@ go get -u github.com/golang/protobuf/protoc-gen-go
 google.golang.org/protobuf
 ```
 
+Then Install protoc-gen-go and protoc-gen-go-grpc
+```bash
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+
+# and
+
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+```
+
+Verify Installation
+```bash
+protoc-gen-go --version
+protoc-gen-go-grpc --version
+```
+
 
 ## Generating Go Code from Protobuf Definitions
 To generate Go code from your .proto files, you can use the protoc command with the protoc-gen-go plugin. Here's a step-by-step guide:
