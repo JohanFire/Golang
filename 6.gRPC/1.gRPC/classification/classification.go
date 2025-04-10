@@ -13,9 +13,8 @@ type Server struct {
 }
 
 func (s *Server) Classify(ctx context.Context, request *ClassificationRequest) (*ClassificationResponse, error) {
-	// func (s *Server) Classify(ctx context.Context, request *pb.ClassificationRequest) (*pb.ClassificationResponse, error) {
 	log.Printf("Received request: %v", request)
-	log.Printf("Name: %s, Appliance: %s, ApplianceVIB: %s", request.Name, request.Appliance, request.ApplianceVIB)
+	// log.Printf("Name: %s, Appliance: %s, ApplianceVIB: %s", request.Name, request.Appliance, request.ApplianceVIB)
 
 	// Simulate classification logic
 	response := &ClassificationResponse{
@@ -28,9 +27,4 @@ func (s *Server) Classify(ctx context.Context, request *ClassificationRequest) (
 		),
 	}
 	return response, nil
-
-	// // Using pb alias
-	// return &pb.ClassificationResponse{
-	// 	Response: "Classified finished for: " + request.Name,
-	// }, nil
 }

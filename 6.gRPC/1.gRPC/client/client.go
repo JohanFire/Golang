@@ -7,7 +7,6 @@ import (
 	"time"
 
 	pb "1.gRPC/classification"
-	// pb "classification"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
