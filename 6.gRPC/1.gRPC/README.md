@@ -35,7 +35,11 @@ This should output the installed version of protoc.
 ### Install gRPC package for Go
 To install the gRPC package for Go, you can use the following command:
 ```bash
+# use this, but now deprecated
 go get -u github.com/golang/protobuf/protoc-gen-go
+
+# instead
+google.golang.org/protobuf
 ```
 
 
