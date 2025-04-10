@@ -4,7 +4,7 @@
 // - protoc             v6.30.2
 // source: classification.proto
 
-package proto
+package classification
 
 import (
 	context "context"
@@ -19,13 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ClassificationService_Classify_FullMethodName = "/chat.ClassificationService/Classify"
+	ClassificationService_Classify_FullMethodName = "/classification.ClassificationService/Classify"
 )
 
 // ClassificationServiceClient is the client API for ClassificationService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ClassificationServiceClient interface {
+	// rpc Classify (ClassificationRequest) returns (ClassificationResponse);
 	Classify(ctx context.Context, in *ClassificationRequest, opts ...grpc.CallOption) (*ClassificationResponse, error)
 }
 
@@ -51,6 +52,7 @@ func (c *classificationServiceClient) Classify(ctx context.Context, in *Classifi
 // All implementations must embed UnimplementedClassificationServiceServer
 // for forward compatibility.
 type ClassificationServiceServer interface {
+	// rpc Classify (ClassificationRequest) returns (ClassificationResponse);
 	Classify(context.Context, *ClassificationRequest) (*ClassificationResponse, error)
 	mustEmbedUnimplementedClassificationServiceServer()
 }
@@ -108,7 +110,7 @@ func _ClassificationService_Classify_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ClassificationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chat.ClassificationService",
+	ServiceName: "classification.ClassificationService",
 	HandlerType: (*ClassificationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -4,7 +4,7 @@
 // 	protoc        v6.30.2
 // source: classification.proto
 
-package proto
+package classification
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -83,8 +83,7 @@ func (x *ClassificationRequest) GetApplianceVIB() string {
 
 type ClassificationResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Label         string                 `protobuf:"bytes,1,opt,name=label,proto3" json:"label,omitempty"`
-	Confidence    float32                `protobuf:"fixed32,2,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	Response      string                 `protobuf:"bytes,1,opt,name=response,proto3" json:"response,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -119,36 +118,26 @@ func (*ClassificationResponse) Descriptor() ([]byte, []int) {
 	return file_classification_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ClassificationResponse) GetLabel() string {
+func (x *ClassificationResponse) GetResponse() string {
 	if x != nil {
-		return x.Label
+		return x.Response
 	}
 	return ""
-}
-
-func (x *ClassificationResponse) GetConfidence() float32 {
-	if x != nil {
-		return x.Confidence
-	}
-	return 0
 }
 
 var File_classification_proto protoreflect.FileDescriptor
 
 const file_classification_proto_rawDesc = "" +
 	"\n" +
-	"\x14classification.proto\x12\x04chat\"m\n" +
+	"\x14classification.proto\x12\x0eclassification\"m\n" +
 	"\x15ClassificationRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1c\n" +
 	"\tappliance\x18\x02 \x01(\tR\tappliance\x12\"\n" +
-	"\fapplianceVIB\x18\x03 \x01(\tR\fapplianceVIB\"N\n" +
-	"\x16ClassificationResponse\x12\x14\n" +
-	"\x05label\x18\x01 \x01(\tR\x05label\x12\x1e\n" +
-	"\n" +
-	"confidence\x18\x02 \x01(\x02R\n" +
-	"confidence2^\n" +
-	"\x15ClassificationService\x12E\n" +
-	"\bClassify\x12\x1b.chat.ClassificationRequest\x1a\x1c.chat.ClassificationResponseB\bZ\x06proto/b\x06proto3"
+	"\fapplianceVIB\x18\x03 \x01(\tR\fapplianceVIB\"4\n" +
+	"\x16ClassificationResponse\x12\x1a\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse2t\n" +
+	"\x15ClassificationService\x12[\n" +
+	"\bClassify\x12%.classification.ClassificationRequest\x1a&.classification.ClassificationResponse\"\x00B\x11Z\x0fclassification/b\x06proto3"
 
 var (
 	file_classification_proto_rawDescOnce sync.Once
@@ -164,12 +153,12 @@ func file_classification_proto_rawDescGZIP() []byte {
 
 var file_classification_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_classification_proto_goTypes = []any{
-	(*ClassificationRequest)(nil),  // 0: chat.ClassificationRequest
-	(*ClassificationResponse)(nil), // 1: chat.ClassificationResponse
+	(*ClassificationRequest)(nil),  // 0: classification.ClassificationRequest
+	(*ClassificationResponse)(nil), // 1: classification.ClassificationResponse
 }
 var file_classification_proto_depIdxs = []int32{
-	0, // 0: chat.ClassificationService.Classify:input_type -> chat.ClassificationRequest
-	1, // 1: chat.ClassificationService.Classify:output_type -> chat.ClassificationResponse
+	0, // 0: classification.ClassificationService.Classify:input_type -> classification.ClassificationRequest
+	1, // 1: classification.ClassificationService.Classify:output_type -> classification.ClassificationResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package chat;
+package classification;
 
 // option go_package = "github.com/user/project/proto/classificationpb";
 // option go_package = "1.gRPC/proto/classificationpb";
@@ -7,11 +7,12 @@ package chat;
 // option go_package = "proto";
 
 // option go_package = "proto/classificationpb"; // if multiple proto files
-option go_package = "proto/";
+// option go_package = "proto/";
+option go_package = "classification/";
 
 service ClassificationService {
-    rpc Classify (ClassificationRequest) returns (ClassificationResponse);
-    // rpc Classify (ClassificationRequest) returns (ClassificationResponse) {}
+    // rpc Classify (ClassificationRequest) returns (ClassificationResponse);
+    rpc Classify (ClassificationRequest) returns (ClassificationResponse) {}
 }
 
 message ClassificationRequest {
@@ -21,6 +22,5 @@ message ClassificationRequest {
 }
 
 message ClassificationResponse {
-    string label = 1;
-    float confidence = 2;
+    string response = 1;
 }
