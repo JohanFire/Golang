@@ -1,0 +1,36 @@
+syntax = "proto3";
+package coffee_shop;
+
+option go_package = "coffee_shop_protos/";
+
+service CoffeeShopService {
+    rpc GetMenu(MenuRequest) returns (stream MenuResponse) {}
+    rpc PlaceOrder(Order) returns (Receipt) {}
+    rpc GetOrderStatus(Receipt) returns (OrderStatus) {}
+}
+
+message MenuRequest {}
+
+message MenuResponse {
+    repeated Item items = 1;
+}
+
+message Order {
+    // indicate this is a list
+    repeated Item items = 1;
+}
+
+message Receipt{
+    string id = 1;
+}
+
+message OrderStatus {
+    string orderId = 1;
+    string status = 2;
+}
+
+
+message Item {
+    string id = 1;
+    string name = 2;
+}
