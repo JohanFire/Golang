@@ -68,3 +68,18 @@ so you can execute now the .exe, it will run the same, but now compiled.
 ```bash
 ./Golang.exe
 ```
+
+
+## Go work example
+```bash
+go work init 
+# 
+go work init <directory>
+```
+
+```go
+go 1.24.2
+
+use ./6.gRPC/1.gRPC
+// use ./6.gRPC/3.gRPC_coffee_shop
+```
