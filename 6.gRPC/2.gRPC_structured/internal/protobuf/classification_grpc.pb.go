@@ -4,7 +4,7 @@
 // - protoc             v6.30.2
 // source: classification.proto
 
-package proto
+package protobuf
 
 import (
 	context "context"
@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ClassificationService_Classify_FullMethodName = "/chat.ClassificationService/Classify"
+	ClassificationService_Classify_FullMethodName = "/classification.ClassificationService/Classify"
 )
 
 // ClassificationServiceClient is the client API for ClassificationService service.
@@ -108,7 +108,7 @@ func _ClassificationService_Classify_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ClassificationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "chat.ClassificationService",
+	ServiceName: "classification.ClassificationService",
 	HandlerType: (*ClassificationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

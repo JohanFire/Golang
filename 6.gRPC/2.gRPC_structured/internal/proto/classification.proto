@@ -1,0 +1,24 @@
+syntax = "proto3";
+package classification; 
+
+
+// option go_package = "classification/"; // protoc --go_out=. --go-grpc_out=.\internal\protobuf\ .\internal\proto\classification.proto
+// option go_package = "go-router/internal/protobuf/classification"; // protoc --go_out=. --go-grpc_out=. .\internal\proto\classification.proto
+// option go_package = "internal/protobuf/classification"; // protoc --go_out=. --go-grpc_out=. .\internal\proto\classification.proto
+
+option go_package = "go-router/internal/protobuf";
+// option go_package = "internal/protobuf";
+
+service ClassificationService {
+    rpc Classify (ClassificationRequest) returns (ClassificationResponse) {}
+}
+
+message ClassificationRequest {
+    string userName = 1;
+    string applianceType = 2;
+    string applianceVIB = 3;
+}
+
+message ClassificationResponse {
+    string response = 1;
+}
