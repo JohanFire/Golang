@@ -2,7 +2,8 @@ hidden/
 
 .env
 
-
+logs/
+*.log*
 
 
 
